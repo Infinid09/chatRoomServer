@@ -1,0 +1,19 @@
+<!Doctype html>
+<head>
+    <title>test page</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function () {
+        var socket = io();
+        $('#btn').click(function(){
+          socket.emit('incoming', 'some incoming value');
+          return false;
+        });
+      });
+    </script>
+</head>
+<body>
+    <button id="btn">Emit</button>
+</body>
+</html>
